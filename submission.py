@@ -2,10 +2,10 @@ import datetime
 
 
 class Submission:
-    def __init__(self, api_v3_data):
-        self.title = api_v3_data['title']
-        self._where = api_v3_data['id']
-        self._when = api_v3_data['datetime']
+    def __init__(self, gallery_data):
+        self.title = gallery_data.title
+        self._where = gallery_data.id
+        self._when = gallery_data.datetime
     
     @property
     def when(self):
