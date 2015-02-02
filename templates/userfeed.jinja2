@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>{{ iun }}'s submissions</title>
+        <description>Imgur gallery submissions for {{ iun }}</description>
+        <link>http://imgur.com/user/{{ iun }}/submitted</link>
+        <lastBuildDate>{{ now }}</lastBuildDate>
+    </channel>
+
+    {% for sub in subs %}
+        <item>
+            <title>{{ sub.title }}</title>
+            <description></description>
+            <link>{{ sub.where }}</link>
+            <pubDate>{{ sub.when }}</pubDate>
+        </item>
+    {% endfor %}
+</rss>
