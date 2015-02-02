@@ -18,7 +18,11 @@ Depends on:
 ## Roadmap ##
 
 - [x] Create a dynamic RSS feed of recent submitted posts using Imgur API
-- [ ] Create a way to view said feeds in the browser (i.e. a UI)
+- [ ] Create a simple way to view said feeds in the browser (i.e. a UI)
 
 At some point I should probably find a way to host it.
 
+
+## Non-goals ##
+
+- Any kind of "discovery" system. There is a reason that this is missing from the main Imgur system - it conflicts with the way the community is grown and how it works (or something to that effect). Some, however, have an interesting 'series' type thing going on (e.g. [CaptRawesome](http://imgur.com/user/CaptRawesome/submitted)) that would be _really_ good to be able to subscribe to.
