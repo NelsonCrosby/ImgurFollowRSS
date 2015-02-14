@@ -46,7 +46,7 @@ You can currently find the app on Heroku at `http://rss-translator.herokuapp.com
 3. Install dependencies
     - `pip install -r requirements.txt`
 4. Run development server locally
-    - `python rss_translator.py`
+    - `python dev_debug_server.py`
 5. Run production server locally (requires Heroku toolbelt)
     - `foreman start`
 
