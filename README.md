@@ -54,7 +54,7 @@ You can currently find the app on Heroku at `http://rss-translator.herokuapp.com
 ## Roadmap ##
 
 - [x] Create a dynamic RSS feed of recent submitted posts using Imgur API
-- [ ] Genericize to provide extensibility to create more feed types
+- [x] Genericize to provide extensibility to create more feed types
 - [ ] Add a couple more feed types
     - [ ] Twitter 'following' feeds
     - [ ] Maybe YouTube subscriptions feeds?

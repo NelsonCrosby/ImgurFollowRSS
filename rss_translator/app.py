@@ -1,5 +1,3 @@
-import datetime
-
 import flask as fl
 from flask import g
 
