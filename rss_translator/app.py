@@ -2,22 +2,14 @@ import datetime
 
 import flask as fl
 from flask import g
-from imgurpython import ImgurClient
 
-from .submission import Submission
 from .feed_loader import FeedLoader
+# noinspection PyUnresolvedReferences
+# Loads feed types
 from . import feed_types
 
 app = fl.Flask(__name__)
 app.config.from_envvar('RSS_TRANSLATOR_CONFIG')
-app.config['client'] = ImgurClient(app.config['IMGUR_CLIENT_ID'],
-                                   app.config['IMGUR_CLIENT_SECRET'])
-
-#
-
-@app.before_request
-def _before_api_request():
-    g.client = app.config['client']
 
 
 for feed_type in FeedLoader.FEED_TYPES:
@@ -35,15 +27,3 @@ for feed_type in FeedLoader.FEED_TYPES:
             feed_info=feed_info,
             feed_data=feed_data
         )
-
-
-@app.route('/api/feeds/<iun>.rss', methods=['GET'])
-def index(iun):
-    now = datetime.datetime.now()
-    submitted = g.client.get_account_submissions(iun)
-    return fl.render_template(
-        'userfeed.jinja2',
-        iun=iun,
-        now=now.strftime('%a, %d %b %Y %H:%M:%S %Z'),
-        subs=[Submission(entry) for entry in submitted]
-    )
